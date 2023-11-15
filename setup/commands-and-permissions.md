@@ -1,67 +1,67 @@
-# Commands & Permissions
+# Команды и разрешения
 
-The three main commands for Quests are **/quests**, **/quest**, and **/questadmin**. The first two are enabled for all users by default, while the last one is reserved for server ops. To change this behavior, such as giving **/questadmin** to non-op administrators, you must set up [permissions](https://bukkit.gamepedia.com/Understanding\_Permissions).
+Есть три основные команды плагина Quests: **/quests**, **/quest** и **/questadmin**. Первые две по умолчанию включены для всех пользователей, а последняя зарезервирована для ОПов сервера. Чтобы изменить такое поведение, например, выдать **/questadmin** администраторам без прав ОПа, вы должны настроить [разрешения](https://bukkit.gamepedia.com/Understanding\_Permissions).
 
-### Player Commands
+### Команды Игроков
 
-Below is a chart which describes each command and its associated permission. Note that the subcommands (list, take, quit, et al.) can change if you [select another plugin language](https://github.com/PikaMug/Quests/wiki/Translations), but permissions will remain the same.
+Ниже приведена таблица, описывающая каждую команду и связанные с ней разрешения. Обратите внимание, что подкоманды (list, take, quit и др.) могут измениться, если вы [выберете другой язык плагина](https://github.com/PikaMug/Quests/wiki/Translations), но разрешения останутся теми же.
 
-| Command               | Permission       | Description                    |
-| --------------------- | ---------------- | ------------------------------ |
-| /quests               | quests.quests    | Display plugin help            |
-| /quests list \[page]  | quests.list      | List available quests          |
-| /quests take \[quest] | quests.take      | Accept a quest via command     |
-| /quests quit \[quest] | quests.quit      | Quit a current quest           |
-| /quests stats         | quests.stats     | View quest statistics          |
-| /quests top \[number] | quests.top       | View plugin leaderboards       |
-| /quests info          | quests.info      | View plugin information        |
-| /quests journal       | quests.journal   | Toggle the Quest Journal       |
-| N/A                   | quests.compass   | Track quests using a Compass   |
-| N/A                   | quests.choice    | Use clickable text             |
-|                       |                  |                                |
-| /quest                | quests.quest     | View current quest objectives  |
-| /quest \[quest]       | quests.questinfo | View information about a quest |
+| Команда                  | Разрешение       | Описание                                |
+| ------------------------ | ---------------- | --------------------------------------- |
+| /quests                  | quests.quests    | Отобразить справку по плагину           |
+| /quests list \[страница] | quests.list      | Показать список доступных квестов       |
+| /quests take \[квест]    | quests.take      | Принять квест через команду             |
+| /quests quit \[квест]    | quests.quit      | Выйти из текущего квеста                |
+| /quests stats            | quests.stats     | Посмотреть статистику квестов           |
+| /quests top \[номер]     | quests.top       | Просмотр таблицы лидеров плагина        |
+| /quests info             | quests.info      | Просмотр информации о плагине           |
+| /quests journal          | quests.journal   | Переключить отображение журнала квестов |
+| нет команды              | quests.compass   | Отслеживать квесты с помощью компаса    |
+| нет команды              | quests.choice    | Использовать кликабельный текст         |
+|                          |                  |                                         |
+| /quest                   | quests.quest     | Посмотреть цели текущего квеста         |
+| /quest \[квест]          | quests.questinfo | Посмотреть информацию о квесте          |
 
 {% hint style="info" %}
-**Pro-tip:** By default, you can also use **/qs** and **/q** in place of **/quests** and **/quest**, respectively!
+**Совет:** по умолчанию вы также можете использовать **/qs** и **/q** вместо **/quests** и **/quest** соответственно!
 {% endhint %}
 
-### Administrator Commands
+### Команды Администраторов
 
-Administrator commands, which should only be granted to those you trust not to misuse them, are outlined below.
+Команды администратора, которые следует предоставлять только тем, кому вы доверяете, чтобы исключить злоупотребление ими, описаны ниже.
 
-| Command                                          | Permission               | Description                                    |
-| ------------------------------------------------ | ------------------------ | ---------------------------------------------- |
-| /questadmin                                      | quests.admin             | Display administrator help                     |
-| /questadmin stats \[player]                      | quests.admin.stats       | View quest statistics of a player              |
-| /questadmin give \[player] \[quest]              | quests.admin.give        | Force a player to take a quest                 |
-| /questadmin quit \[player] \[quest]              | quests.admin.quit        | Force a player to quit a quest                 |
-| /questadmin points \[player] \[amount]           | quests.admin.points      | Set a player's Quest Points                    |
-| /questadmin takepoints \[player] \[amount]       | quests.admin.takepoints  | Take away a player's Quest Points              |
-| /questadmin givepoints \[player] \[amount]       | quests.admin.givepoints  | Add to a player's Quest Points                 |
-| /questadmin pointsall \[amount]                  | quests.admin.pointsall   | Set ALL players' Quest Points                  |
-| /questadmin finish \[player] \[quest]            | quests.admin.finish      | Force a player to complete a quest             |
-| /questadmin nextstage \[player] \[quest]         | quests.admin.nextstage   | Force a player to complete current stage       |
-| /questadmin setstage \[player] \[quest] \[stage] | quests.admin.setstage    | Set the current stage for a player             |
-| /questadmin reset \[player]                      | quests.admin.reset       | Clear all Quests data of a player              |
-| /questadmin remove \[player] \[quest]            | quests.admin.remove      | Remove a completed quest from a player         |
-| /questadmin reload                               | quests.admin.reload      | Safely reload the plugin                       |
-| N/A                                              | quests.admin.drop        | Ability to drop the Quests Journal             |
-| N/A                                              | quests.admin.update      | View plugin update notices                     |
-| N/A                                              | quests.mode.trial        | Limited access to editors, disabled by default |
-| /quests editor                                   | quests.editor.editor     | Ability to open Quests Editor                  |
-| N/A                                              | quests.editor.create     | Ability to create new quests                   |
-| N/A                                              | quests.editor.edit       | Ability to edit existing quests                |
-| N/A                                              | quests.editor.delete     | Ability to delete existing quests              |
-| /quests actions                                  | quests.actions.editor    | Ability to open Action Editor                  |
-| N/A                                              | quests.actions.create    | Ability to create new actions                  |
-| N/A                                              | quests.actions.edit      | Ability to edit existing actions               |
-| N/A                                              | quests.actions.delete    | Ability to delete existing actions             |
-| /quests conditions                               | quests.conditions.editor | Ability to open Condition Editor               |
-| N/A                                              | quests.conditions.create | Ability to create new conditions               |
-| N/A                                              | quests.conditions.edit   | Ability to edit existing conditions            |
-| N/A                                              | quests.conditions.delete | Ability to delete existing conditions          |
+| Команда                                            | Разрешение               | Описание                                       |
+| -------------------------------------------------- | ------------------------ | ---------------------------------------------- |
+| /questadmin                                        | quests.admin             | Отобразить справку администратора                     |
+| /questadmin stats \[игрок]                         | quests.admin.stats       | Просмотр статистику квестов игрока              |
+| /questadmin give \[игрок] \[квест]                 | quests.admin.give        | Заставить игрока взять квест                 |
+| /questadmin quit \[игрок] \[квест]                 | quests.admin.quit        | Заставить игрока выйти из квеста                 |
+| /questadmin points \[игрок] \[количество]          | quests.admin.points      | Установить очки квестов (Quest Points) игрока                     |
+| /questadmin takepoints \[игрок] \[количество]      | quests.admin.takepoints  | Отобрать очки квестов (Quest Points) игрока    |
+| /questadmin givepoints \[игрок] \[количество]      | quests.admin.givepoints  | Добавить очки квестов (Quest Points) игрока           |
+| /questadmin pointsall \[количество]                | quests.admin.pointsall   | Установить очки квестов (Quest Points) ВСЕМ игрокам        |
+| /questadmin finish \[игрок] \[квест]               | quests.admin.finish      | Установить для игрока завершение квеста             |
+| /questadmin nextstage \[игрок] \[квест]            | quests.admin.nextstage   | Установить для игрока завершение текушего этапа квеста |
+| /questadmin setstage \[игрок] \[квест] \[этап]     | quests.admin.setstage    | Установить для игрока текущий этап квеста            |
+| /questadmin reset \[игрок]                         | quests.admin.reset       | Очистить все данные квестов игрока              |
+| /questadmin remove \[игрок] \[квест]               | quests.admin.remove      | Удалить выполненный квест у игрока         |
+| /questadmin reload                                 | quests.admin.reload      | Безопасно перезагрузить плагин                       |
+| нет команды                                        | quests.admin.drop        | Возможность выбросить журнал квестов             |
+| нет команды                                        | quests.admin.update      | Просмотр уведомлений об обновлении плагина                    |
+| нет команды                                        | quests.mode.trial        | Ограниченный доступ к редактированию, отключен по умолчанию |
+| /quests editor                                     | quests.editor.editor     | Возможность открыть редактор квестов                  |
+| нет команды                                        | quests.editor.create     | Возможность создавать новые квесты                   |
+| нет команды                                        | quests.editor.edit       | Возможность редактировать существующие квесты               |
+| нет команды                                        | quests.editor.delete     | Возможность удалять существующие квесты.             |
+| /quests actions                                    | quests.actions.editor    | Возможность открыть редактор действий                  |
+| нет команды                                        | quests.actions.create    | Возможность создавать новые действия                  |
+| нет команды                                        | quests.actions.edit      | Возможность редактирования существующих действий             |
+| нет команды                                        | quests.actions.delete    | Возможность удаления существующих действий             |
+| /quests conditions                                 | quests.conditions.editor | Возможность открыть редактор условий               |
+| нет команды                                        | quests.conditions.create | Возможность создавать новые условия              |
+| нет команды                                        | quests.conditions.edit   | Возможность редактирования существующих условий            |
+| нет команды                                        | quests.conditions.delete | Возможность удаления существующих условий          |
 
 {% hint style="info" %}
-**Pro-tip:** Use _quests.admin.\*_, _quests.editor.\*_, _quests.actions.\*_ and _quests.conditions.\*_ to encompass all admin and editor permissions, respectively! By default, you can also use **/qa** instead of **/questadmin**!
+**Совет:** используйте _quests.admin.\*_, _quests.editor.\*_, _quests.actions.\*_ и _quests.conditions.\*_, чтобы охватить все права администратора и редактора соответственно! По умолчанию вы также можете использовать **/qa** вместо **/questadmin**!
 {% endhint %}
