@@ -1,35 +1,35 @@
-# Table of contents
+# Содержание
 
-* [Home](README.md)
+* [Начало](README.md)
 
-## Setup
+## Установка
 
-* [Commands & Permissions](setup/commands-and-permissions.md)
-* [Configuration](setup/configuration.md)
-* [Quest Editor](setup/quests-editor.md)
+* [Команды и Разрешения](setup/commands-and-permissions.md)
+* [Конфигурация](setup/configuration.md)
+* [Редактор квестов](setup/quests-editor.md)
 
-## Beginner
+## Начинающий
 
-* [Dependencies](beginner/dependencies.md)
-* [Options](beginner/options.md)
-* [Planner](beginner/planner.md)
-* [Requirements](beginner/requirements.md)
-* [Rewards](beginner/rewards.md)
+* [Зависимости](beginner/dependencies.md)
+* [Опции](beginner/options.md)
+* [Планировщик](beginner/planner.md)
+* [Требования](beginner/requirements.md)
+* [Награды](beginner/rewards.md)
 
-## Casual
+## Опытный
 
-* [Action Editor](casual/action-editor.md)
-* [Bridge Plugins](casual/bridge-plugins.md)
-* [Modules](casual/modules.md)
-* [Translations](casual/translations.md)
+* [Редактор Действий](casual/action-editor.md)
+* [Соединительные Плагины](casual/bridge-plugins.md)
+* [Модули](casual/modules.md)
+* [Переводы](casual/translations.md)
 
-## Expert
+## Эксперт
 
-* [Condition Editor](expert/condition-editor.md)
-* [Storage](expert/storage.md)
-* [Doc Contributions](expert/doc-contributions.md)
+* [Редактор Условий](expert/condition-editor.md)
+* [Хранилище](expert/storage.md)
+* [Внести свой вклад](expert/doc-contributions.md)
 
-## Master
+## Мастер
 
-* [Custom Quest API](master/custom-quest-api.md)
-* [Plugin Compilation](master/plugin-compilation.md)
+* [Доработка Quest API](master/custom-quest-api.md)
+* [Сборка плагина](master/plugin-compilation.md)
