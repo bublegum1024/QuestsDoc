@@ -1,12 +1,12 @@
-# Custom Quest API
+# Доработка Quest API
 
 {% hint style="info" %}
-**Alert:** This information is intended for developers. Learn how to use Java first!
+**Предупреждение:** Эта информация пригодится разработчикам. Требуется знание Java!
 {% endhint %}
 
-### Add to your project
+### Добавьте в свой проект
 
-If you're using Maven or another project management tool, add the latest version of Quests through the CodeMC service.
+Если вы используете Maven или другой инструмент управления проектами, добавьте последнюю версию Quests через сервис CodeMC.
 
 ```xml
 <repository>
@@ -15,7 +15,7 @@ If you're using Maven or another project management tool, add the latest version
 </repository>
 ```
 
-Unless designing a cross-platform project, you'll want to define the core artifact.
+Если вы не разрабатываете кросс-платформенный проект, вам потребуется задать основной артефакт.
 
 ```xml
 <dependency>
@@ -25,15 +25,15 @@ Unless designing a cross-platform project, you'll want to define the core artifa
 </dependency>
 ```
 
-### Learn the interface
+### Изучите интерфейс
 
-Quests provides a simple API to create custom requirements, rewards, and objectives. To begin, make sure you are compiling against version 4.0.0 or above. Once you've finished following this guide, use the /Quests/modules folder as the destination for your finished and compiled jar. If distributing your module, make sure to inform the end user of the correct folder location.
+Quests предоставляет простой API для создания индивидуальных требований, наград и целей. Для начала убедитесь, что вы компилируете версию 4.0.0 или выше. Закончив следовать этому руководству, используйте папку /Quests/modules в качестве места назначения для готового и скомпилированного jar-файла. При распространении вашего модуля обязательно сообщите конечному пользователю правильное расположение папки.
 
-The following examples assume you are creating a project for Bukkit-based software.
+В следующих примерах предполагается, что вы создаете проект для программного обеспечения на базе Bukkit.
 
-#### Requirements API
+#### Requirements API (API Требований)
 
-Building a Quests Requirement is very simple. To get started, create a Java class that extends the CustomRequirement class. After that, check out this example of a Custom Requirement where the player must have a particular name in order to take the Quest:
+Создать требования к квестам очень просто. Для начала создайте класс Java, расширяющий класс CustomRequirement. После этого ознакомьтесь с этим примером специального требования, в котором у игрока должно быть определенное имя, чтобы выполнить квест:
 
 ```java
 package xyz.janedoe;
@@ -70,23 +70,23 @@ public class NameRequirement extends BukkitCustomRequirement {
 }
 ```
 
-In the constructor of your class, you may use any of the following methods:
+В конструкторе вашего класса вы можете использовать любой из следующих методов:
 
-| Method          | Description                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| setName         | Sets the name of the Custom Objective.                                                                                                                                     |
-| setAuthor       | Sets the author of the Custom Objective (you!).                                                                                                                            |
-| setItem         | Set an item which might appear in overlay plugins like QuestsGUI.                                                                                                          |
-| setDisplay      | Sets how the requirement is displayed when failed.                                                                                                                         |
-| addStringPrompt | Adds a new editor prompt with the specified title, description, and default value for your Custom Objective. Quest editors may input a string which is up to you to parse. |
+| Метод           | Описание                                                                                                                                                                                                          |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| setName         | Устанавливает имя пользовательского требования.                                                                                                                                                                   |
+| setAuthor       | Устанавливает автора пользовательского требования (вас!).                                                                                                                                                         |
+| setItem         | Устанавливает элемент, который будет отображаться в интерфейсных плагинах, таких как QuestsGUI.                                                                                                                   |
+| setDisplay      | Устанавливает способ отображения требования в случае, если проверка неудачна.                                                                                                                                     |
+| addStringPrompt | Добавляет новое приглашение с указанным заголовком, описанием и значением по умолчанию для вашего пользовательского требования. Создатели квестов смогут ввести строку, которую вы затем можете проанализировать. |
 
-Inside #testRequirement is where you perform your logic to determine whether the player passes the requirement, returning true if they do, and false if they do not.
+Внутри #testRequirement вы выполняете свою логику, чтобы определить, соответствует ли игрок требованию, и возвращаете true, если он соответствует, или false, если нет.
 
-The data Map contains the data that the person who created the Quest gave to it. In this example, the data Map contains the two values for 'Name' and 'Case-Sensitive'. Also, note that while the values are of type Object, they were cast to type String internally. You must perform manual type-conversion if you want to obtain integers, booleans, et al.
+Карта данных содержит данные, которые ей передал тот, кто создал квест. В этом примере карта данных содержит два значения: 'Name' и 'Case-Sensitive'. Также обратите внимание, что хотя значения имеют тип Object, внутри они были приведены к типу String. Вам необходимо выполнить преобразование типов вручную, если вы хотите получить целые числа, логические значения и т. д.
 
-#### Rewards API
+#### Rewards API (API Наград)
 
-Building a Quests Reward is very simple. To get started, create a Java class that extends the CustomReward class. After that, check out this example of a Custom Reward where a player gets a GUI Inventory that pops up containing iron, gold and diamonds:
+Создать награду за квесты очень просто. Для начала создайте класс Java, расширяющий класс CustomReward. После этого посмотрите на этот пример пользовательской награды, где игрок получает открытый инвентарь, содержащий железо, золото и алмазы:
 
 ```java
 package xyz.janedoe;
@@ -170,19 +170,20 @@ public class LootReward extends BukkitCustomReward {
 }
 ```
 
-In the constructor of your class, you may use any of the following methods:
+В конструкторе вашего класса вы можете использовать любой из следующих методов:
 
-| Method          | Description                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| setName         | Sets the name of the Custom Objective.                                                                                                                                     |
-| setAuthor       | Sets the author of the Custom Objective (you!).                                                                                                                            |
-| setItem         | Set an item which might appear in overlay plugins like QuestsGUI.                                                                                                          |
-| setDisplay      | Sets the reward name (text that will appear when the player completes the Quest) of the Custom Reward.                                                                     |
-| addStringPrompt | Adds a new editor prompt with the specified title, description, and default value for your Custom Objective. Quest editors may input a string which is up to you to parse. |
+| Метод           | Описание                                                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| setName         | Устанавливает имя пользовательской награды.                                                                                                                                                                  |
+| setAuthor       | Устанавливает автора пользовательской награды (вас!).                                                                                                                                                        |
+| setItem         | Устанавливает элемент, который будет отображаться в интерфейсных плагинах, таких как QuestsGUI.                                                                                                              |
+| setDisplay      | Устанавливает имя награды (текст, который появится, когда игрок завершит квест) для пользовательской награды.                                                                                                |
+| addStringPrompt | Добавляет новое приглашение с указанным заголовком, описанием и значением по умолчанию для вашей пользовательской награды. Создатели квестов смогут ввести строку, которую вы затем можете проанализировать. |
 
-Inside #giveReward is where you perform your logic to give the player whatever it is your Custom Reward gives. The data Map contains the data that the person who created the Quest gave to it. In this example, the data Map contains four values: One for the title of the GUI, and three for the amount of iron/gold/diamonds. Also, note that while the values are of type Object, they were cast to type String internally. You must perform manual type-conversion if you want to obtain integers, booleans, et al.
 
-#### Objectives API
+Внутри #giveReward вы выполняете свою логику, чтобы дать игроку все, что дает ваша специальная награда. Карта данных содержит данные, которые ей передал тот, кто создал квест. В этом примере карта данных содержит четыре значения: одно для заголовка графического интерфейса и три для количества железа/золота/алмазов. Также обратите внимание, что хотя значения имеют тип Object, внутри они были приведены к типу String. Вам необходимо выполнить преобразование типов вручную, если вы хотите получить целые числа, логические значения и т. д.
+
+#### Objectives API (API Целей)
 
 Building a Quests Objective is a bit more complicated than Requirements or Rewards. To get started, create a Java class that extends the CustomObjective class. If you want to catch one of Bukkit's Events, you'll need to implement the Listener class (Quests will take care of registering it for you). After that, check out these examples of a Custom Objective:
 
@@ -335,16 +336,16 @@ public class AnyBreakBlockObjective extends BukkitCustomObjective {
 
 In the constructor of your class, you may use any of the following methods:
 
-| Method          | Description                                                                                                                                                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| setName         | Sets the name of the Custom Objective.                                                                                                                                                                                                                                  |
-| setAuthor       | Sets the author of the Custom Objective (you!).                                                                                                                                                                                                                         |
-| setItem         | Set an item which might appear in overlay plugins like QuestsGUI.                                                                                                                                                                                                       |
-| setShowCount    | Sets whether the quest editor may set the count (number of times player must repeat task). Default is "true". _This will apply to all prompts added with #addStringPrompt unless disabled._                                                                             |
-| setCountPrompt  | Sets the prompt description for the user to enter the count for the objective. Default is "Enter number".                                                                                                                                                               |
-| setDisplay      | Sets how the objective is displayed in /quests list and the Quest Journal. For placeholders, use `%count%` to get the value of #setShowCount, and #addStringPrompt titles for user input (such as `%Item Name%` in the second example). Default is "Progress: %count%". |
-| addStringPrompt | Adds a new editor prompt with the specified title, description, and default value for your Custom Objective. Quest editors may input a string which is up to you to parse.                                                                                              |
+| Метод           | Описание                                                                                                                                                                                                                                                                                                              |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| setName         | Устанавливает имя пользовательской цели.                                                                                                                                                                                                                                                                              |
+| setAuthor       | Устанавливает автора пользовательской цели (вас!).                                                                                                                                                                                                                                                                    |
+| setItem         | Устанавливает элемент, который будет отображаться в интерфейсных плагинах, таких как QuestsGUI.                                                                                                                                                                                                                       |
+| setShowCount    | Устанавливает, может ли создатель квеста устанавливать счетчик (количество раз, которое игрок может повторить задание). По умолчанию установлено «истина». _Это будет применяться ко всем запросам, добавленным с помощью #addStringPrompt, кроме отключенных._                                                       |
+| setCountPrompt  | Задает описание подсказки, позволяющей пользователю ввести счетчик для цели. По умолчанию "Введите число".                                                                                                                                                                                                            |
+| setDisplay      | Устанавливает способ отображения цели в списке /quests и журнале квестов. Для заполнителей используйте `%count%`, чтобы получить значение #setShowCount, и заголовки #addStringPrompt для пользовательского ввода (например, `%Item Name%` во втором примере). По умолчанию установлено значение "Прогресс: %count%". |
+| addStringPrompt |Добавляет новое приглашение с указанным заголовком, описанием и значением по умолчанию для вашей пользовательской цели. Создатели квестов смогут ввести строку, которую вы затем можете проанализировать.                                                                                                              |
 
-Inside your EventHandlers (if applicable), determine whether the player has completed part or all of the objective, and then use #incrementObjective to advance the player. The first and the second argument of #incrementObjective should always be the player and 'this' respectively. The third argument is how much to increment the objective by, while the last is the quest for which to apply the increment to. Even if your objective does not have a count, you must still use #incrementObjective - use an increment of 1 to signal that the objective has been completed.
+Внутри обработчиков событий (если применимо) определите, выполнил ли игрок часть или всю цель, а затем используйте #incrementObjective для продвижения игрока. Первым и вторым аргументом #incrementObjective всегда должны быть игрок и 'this' соответственно. Третий аргумент — насколько увеличить цель, а последний — квест, к которому можно применить приращение. Даже если ваша цель не имеет счетчика, вы все равно должны использовать #incrementObjective — используйте приращение 1, чтобы сигнализировать о том, что цель достигнута.
 
-The `Map<String, Object>` contains the data that the quest editor provided. In this example, the data keys are the item names, whereas the values are the user's input for your prompt (which _can_ be null). Also, note that while the values are of type Object, they were cast to type String internally. You must perform manual type-conversion if you want to obtain integers, booleans, et al.
+Карта `Map<String, Object>` содержит данные, предоставленные редактором квестов. В этом примере ключи данных — это имена элементов, тогда как значения — это вводимые пользователем данные для вашего приглашения (которые _могут_ быть null). Также обратите внимание, что хотя значения имеют тип Object, внутри они были приведены к типу String. Вам необходимо выполнить преобразование типов вручную, если вы хотите получить целые числа, логические значения и т. д.
