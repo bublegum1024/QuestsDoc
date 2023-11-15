@@ -1,29 +1,29 @@
-# Plugin Compilation
+# Сборка плагина
 
 {% hint style="info" %}
-**Alert:** This information is intended for developers. Learn how to use Java first!
+**Предупреждение:** Эта информация пригодится разработчикам. Требуется знание Java!
 {% endhint %}
 
-### Set up an IDE
+### Настройка IDE
 
-If you would like to [contribute a Pull Request](https://github.com/PikaMug/Quests/pulls) without the use of Github's online tools, or would just like to change some aspects of the plugin for yourself, the best way to do so is to compile the plugin locally on your own machine.
+Если вы хотите [отправить Pull Request](https://github.com/PikaMug/Quests/pulls) без использования онлайн-инструментов Github или просто хотите изменить некоторые аспекты плагина под себя, лучший способ сделать это — скомпилировать плагин локально на вашем компьютере.
 
-Although this can be accomplished in several programs, we recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/). A basic understanding of Apache Maven is suggested.
+Несмотря на то, что это можно сделать в нескольких программах, мы всё же рекомендуем [IntelliJ IDEA](https://www.jetbrains.com/idea/). Базовое понимание [Apache Maven](https://maven.apache.org/) очень желательно.
 
-### Download the source code
+### Скачивание исходного кода
 
-With your machine raring to go, let's download the Quests source. If you intend on submitting a Pull Request, we recommend [creating a fork](https://guides.github.com/activities/forking/) so that you can request that your changes be merged into this repository. Otherwise, if you only want to compile locally with your own edits, copy this link:
+Поскольку ваша машина уже готова к работе, давайте загрузим исходный код Quests. Если вы собираетесь отправлять pull request-ы, мы рекомендуем создать форк, чтобы вы могли запросить включение ваших изменений в этот репозиторий. В противном случае, если вы хотите только скомпилировать плагин локально со своими собственными правками и доработками, скопируйте эту ссылку:
 
 `https://github.com/PikaMug/Quests.git`
 
-Open IntelliJ. If you are currently in a project, go to `File -> Close Project`. At the Welcome to IntelliJ IDEA screen, click the Get from VCS button. Paste the URL from above and click Clone. Give the project some time to load, then explore the Project persepctive in the left taskbar.
+Откройте IntelliJ. Если вы уже в проекте, выберите `File -> Close Project`. На экране приветствия IntelliJ IDEA нажмите кнопку `Get from VCS`. Вставьте URL, который вы скопировали ранее, и нажмите `Clone`. Дайте проекту некоторое время для загрузки, а затем изучите структуру проекта на вкладке `Project` в левой панели задач.
 
-### Sharing edits
+### Публикация изменений
 
-Once you've made the changes you desire, you're ready to either package it or upload it to your forked repository.
+После внесения желаемых изменений вы можете либо собрать свой пакет плагина, либо загрузить их в свою ветку (форк) репозитория.
 
-**To compile Quests into a jar** for use in a Spigot/Paper server, open the Maven perspective in the right taskbar and expand `quests (root)`. Select the `package` option. Any remaining dependencies will be downloaded and (on Windows) you will end up with a finished JAR file in `C:\Users\YourAccount\IdeaProjects\Quests\dist\target`.
+**Чтобы скомпилировать Quests в виде jar** и в дальнейшем использовать на сервере Spigot/Paper, откройте вкладку `Maven` в правой панели задач и выберите там `quests (root)`. Затем щёлкните по опции `package`. Все оставшиеся зависимости будут загружены, и (в Windows) вы получите готовый JAR-файл в каталоге `C:\Users\YourAccount\IdeaProjects\Quests\dist\target`.
 
-**To upload the changes** for future use in a Pull Request, open the Commit perspective in the left taskbar. Make sure all files you wish to trasmit are checked, then give your commit a short description. Once you're completely sure you're ready to share your changes with the world, select the `Commit and Push...` button and follow the prompts.
+**Чтобы загрузить изменения** для последующего использования их в Pull Request, откройте вкладку `Commit` в левой панели задач. Убедитесь, что все файлы, которые вы хотите передать, отмечены флажком, затем дайте краткое описание вашего коммита. Как только вы будете полностью уверены, что готовы поделиться своими изменениями со всем миром, нажмите кнопку `Commit and Push...` и следуйте подсказкам.
 
-Visit your forked repository on Github and select the `New pull request` button to ask that the new commit(s) be merged into the master Quests repository. Follow the directions on-screen. Thank you for contributing to Quests!
+Посетите свою ветку (форк) репозитория на Github и нажмите кнопку `New pull request`, чтобы предложить добавить ваши правки в главный репозиторий Quests. Следуйте инструкциям на экране. Спасибо за ваш вклад в улучшение и развитие плагина Quests!
